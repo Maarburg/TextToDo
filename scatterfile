@@ -1,0 +1,84 @@
+;******************************************************************************
+
+;My Todo System
+; Priority A means this is the MUST FING HAPPEN or bad things will ensue
+; Priority B means this is planned for Today
+; Priority C means this is planned for this week
+; Priotiry D means this is planned for next week
+; Priority S means this is .. someday. Maybe.
+; Priority W means that this is waiting on something or someone.
+
+::..newtd::
+InputBox, PRI, Priority?
+InputBox, task, Task?
+InputBox, project, Project?
+InputBox, context, Context?
+Send - [ ]{space}(%PRI%){space}%task%{space}{+}%project%{space}{@}%context%
+return
+
+;Ondeck and Priority A
+::..oa::\[[{^}xX]\].{+}\([aA]\)
+Return
+
+;Ondeck and Priority B
+::..ob::\[[{^}xX]\].{+}\([bB]\)
+Return 
+
+;Ondeck and Priority C
+::..oc::\[[{^}xX]\].{+}\([cC]\)
+Return
+
+;Ondeck and Priority D
+::..od::\[[{^}xX]\].{+}\([dD]\)
+Return
+
+;Ondeck and Someday
+::..os::\[[{^}xX]\].{+}\([sS]\)
+Return
+
+;Ondeck and Waiting On
+::..ow::\[[{^}xX]\].{+}\([wW]\)
+Return
+
+;Ondeck and No Priority
+::..ono::\[[{^}xX]\].{+}\(\)
+Return
+
+;Ondeck and all Priorities
+::..oall::\[[{^}xX]\].{+}\([a-zA-Z]\)
+Return
+
+;+++++Active+++++   This means that there is "." in the ToDo MD box to indicated that it has been started.
+;Active and Priority A
+::..aa::\[[\.]\].{+}\([aA]\)
+Return
+
+;Active and Priority B
+::..ab::\[[\.]\].{+}\([bB]\)
+Return 
+
+;Active and Priority C
+::..ac::\[[\.]\].{+}\([cC]\)
+Return
+
+;Active and Priority D
+::..ad::\[[\.]\].{+}\([dD]\)
+Return
+
+;Active and Someday   - This really shouldn't happen
+::..acs::\[[\.]\].{+}\([sS]\)
+Return
+
+;Active and Waiting On
+::..aw::\[[\.]\].{+}\([wW]\)
+Return
+
+;Active and No Priority
+::..ono::\[[{^}xX]\].{+}\(\)
+Return
+
+;Active and all Priorities
+::..aall::\[[\.]\].{+}\([a-zA-Z]\)
+Return
+
+;============================================================================
